@@ -19,6 +19,7 @@ services:
       TZ: "Europe/Moscow"
       EQ_TELEGRAM_TOKEN:
       CLIENT_EQ_URL:
+      
     deploy:
       mode: replicated
       replicas: 1
