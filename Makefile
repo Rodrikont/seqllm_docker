@@ -18,6 +18,14 @@ help: ## List of commands
 		printf "\n\033[1m%s\033[0m\n", substr($$0, 5) \
 	} ' $(MAKEFILE_LIST)
 
+secrets-create: ## Создание secrets
+	docker secret create seqllm_telegram_token ./secrets/seqllm_telegram_token
+	docker secret create seqllm_wolfram_appid ./secrets/seqllm_wolfram_appid
+
+secrets-rm: ## Создание secrets
+	docker secret rm seqllm_telegram_token
+	docker secret rm seqllm_wolfram_appid
+
 stack-deploy: ## Развертывание контейнеров
 	@docker stack deploy -c docker-compose.yml --detach=true $(STACK_NAME)
 

@@ -7,6 +7,8 @@ services:
       - ${HTTP_PORT}:8080
     environment:
       TZ: "Europe/Moscow"
+    secrets:
+      - seqllm_wolfram_appid
     deploy:
       mode: replicated
       replicas: 1
@@ -18,8 +20,10 @@ services:
     environment:
       TZ: "Europe/Moscow"
       EQ_TELEGRAM_TOKEN:
-      CLIENT_EQ_URL:
-      
+      CLIENT_EQ_ADDR:
+      CLIENT_EQ_PORT:
+    secrets:
+      - seqllm_telegram_token
     deploy:
       mode: replicated
       replicas: 1
@@ -27,14 +31,9 @@ services:
         constraints:
           - "node.hostname==${NODE_HOSTNAME}"
 
-#secrets:  
-#  npulse_telegram_token:
-#    external: true
+secrets:
+  seqllm_telegram_token:
+    external: true
+  seqllm_wolfram_appid:
+    external: true
 
-#volumes:
-#  app_log:
-#    driver: local
-#    driver_opts:
-#      type: nfs
-#      o: addr=${NFS_DATA_SERVER},rw
-#      device: ":/srv/nfs/srvSwarmData/npulse-watcher/log"
