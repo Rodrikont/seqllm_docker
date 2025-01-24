@@ -22,7 +22,7 @@ secrets-create: ## Создание secrets
 	docker secret create seqllm_telegram_token ./secrets/seqllm_telegram_token
 	docker secret create seqllm_wolfram_appid ./secrets/seqllm_wolfram_appid
 
-secrets-rm: ## Создание secrets
+secrets-rm: ## Удаление secrets
 	docker secret rm seqllm_telegram_token
 	docker secret rm seqllm_wolfram_appid
 
