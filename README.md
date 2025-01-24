@@ -1,2 +1,2 @@
 # Docker seullm
-Сервис собирает Docker контейнер
+Скрипт для запуска контейнеров в Docker Swarm
