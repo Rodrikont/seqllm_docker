@@ -22,6 +22,7 @@ services:
       EQ_TELEGRAM_TOKEN:
       CLIENT_EQ_ADDR:
       CLIENT_EQ_PORT:
+      PYTHONUNBUFFERED: 1
     secrets:
       - seqllm_telegram_token
     deploy:
