@@ -12,9 +12,9 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-      placement:
-        constraints:
-          - "node.hostname==${NODE_HOSTNAME}"
+      #placement:
+      #  constraints:
+      #    - "node.hostname==${NODE_HOSTNAME}"
   bot:
     image: ${APP_BOT_IMG}
     environment:
@@ -28,9 +28,9 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-      placement:
-        constraints:
-          - "node.hostname==${NODE_HOSTNAME}"
+      #placement:
+      #  constraints:
+      #    - "node.hostname==${NODE_HOSTNAME}"
 
 secrets:
   seqllm_telegram_token:
